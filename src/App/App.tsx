@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button } from 'semantic-ui-react';
-import styles from './App.module.scss';
+import { BrowserRouter as Route } from 'react-router-dom';
+import Routes from './Routes';
 
 const App: React.FC = () => {
   return (
-    <h2 className={styles.app}>
-      <Button>Click</Button>
-    </h2>
+    <Route>
+      <Routes />
+    </Route>
   );
 };
 
