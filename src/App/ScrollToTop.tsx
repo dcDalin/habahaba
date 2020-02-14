@@ -12,7 +12,7 @@ const ScrollToTop: React.FC<Props> = (props: Props) => {
     const unlisten = history.listen(() => {
       window.scrollTo(0, 0);
     });
-    return () => {
+    return (): any => {
       unlisten();
     };
   }, []);

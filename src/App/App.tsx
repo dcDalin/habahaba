@@ -1,12 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import AuthState from '../context/AuthContext/authState';
+import ActiveNavState from '../context/ActiveNavContext/activeNavState';
+import ResponsiveContainer from '../components/ResponsiveContainer';
 import Routes from './Routes';
+import FullPageLoader from '../components/Loaders/fullPageLoader';
 
 const App: React.FC = () => {
   return (
-    <Route>
-      <Routes />
-    </Route>
+    <AuthState>
+      <FullPageLoader />
+      <Router>
+        <ActiveNavState>
+          <ResponsiveContainer>
+            <Routes />
+          </ResponsiveContainer>
+        </ActiveNavState>
+      </Router>
+    </AuthState>
   );
 };
 

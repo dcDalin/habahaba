@@ -1,6 +1,5 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ApolloProvider from './ApolloProvider';
 import 'semantic-ui-css/semantic.min.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(ApolloProvider, document.getElementById('root'));
