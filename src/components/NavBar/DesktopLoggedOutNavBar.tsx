@@ -1,11 +1,13 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Responsive, Menu, Container } from 'semantic-ui-react';
+import { Responsive, Menu } from 'semantic-ui-react';
 import getWidth from '../../utils/getWidth';
 import ActiveNavContext from '../../context/ActiveNavContext/activeNavContext';
 import * as routes from '../../Routes';
+import Search from '../Search';
 import styles from './NavBar.module.scss';
 import LoginModal from '../Auth/Login';
+import ContainerWrapper from '../Container';
 
 export interface Props {
   children: React.ReactNode;
@@ -17,44 +19,37 @@ const DesktopLoggedOutNavBar: React.FC<Props> = (props: Props) => {
   return (
     <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
       <Menu fixed="top" secondary className={styles.menu}>
-        <Menu.Item>
-          <Menu.Item as={Link} to={routes.HOME} className={styles.menuItem}>
-            <span className={styles.logoText}>Fiklin</span>
+        <ContainerWrapper>
+          <Menu.Item>
+            <Menu.Item as={Link} to={routes.HOME} className={styles.menuItem}>
+              <span className={styles.logoText}>HabaHaba</span>
+            </Menu.Item>
           </Menu.Item>
-        </Menu.Item>
+          <Menu.Item>
+            <Search />
+          </Menu.Item>
+          <Menu.Item position="right">
+            <Menu.Item
+              as={Link}
+              to={routes.FAQ}
+              name="faq"
+              className={
+                activeItem === 'faq'
+                  ? `${styles.menuItem} ${styles.menuItemItem} ${styles.active}`
+                  : `${styles.menuItem} ${styles.menuItemItem}`
+              }
+              onClick={handleItemClick}
+            >
+              FAQ
+            </Menu.Item>
 
-        <Menu.Item position="right">
-          <Menu.Item
-            as={Link}
-            to={routes.TOURS}
-            name="tours"
-            className={
-              activeItem === 'tours'
-                ? `${styles.menuItem} ${styles.menuItemItem} ${styles.active}`
-                : `${styles.menuItem} ${styles.menuItemItem}`
-            }
-            onClick={handleItemClick}
-          >
-            Tours
+            <Menu.Item className={styles.menuItem}>
+              <LoginModal />
+            </Menu.Item>
           </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to={routes.TICKE_RESALE}
-            name="ticket-resale"
-            className={
-              activeItem === 'ticket-resale'
-                ? `${styles.menuItem} ${styles.menuItemItem} ${styles.active}`
-                : `${styles.menuItem} ${styles.menuItemItem}`
-            }
-            onClick={handleItemClick}
-          >
-            Ticket Resale
-          </Menu.Item>
-          <Menu.Item className={styles.menuItem}>
-            <LoginModal />
-          </Menu.Item>
-        </Menu.Item>
+        </ContainerWrapper>
       </Menu>
+
       <div style={{ marginTop: '67px' }}>{children}</div>
     </Responsive>
   );

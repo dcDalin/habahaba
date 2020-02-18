@@ -21,7 +21,7 @@ const MobileLoggedInNavBar: React.FC<Props> = (props: Props) => {
       <Responsive getWidth={getWidth} maxWidth={Responsive.onlyMobile.maxWidth}>
         <Menu fixed="top" secondary className={styles.mobileMenu} size="huge">
           <Menu.Item as={Link} to={routes.HOME} active={activeItem === 'home'} onClick={handleItemClick}>
-            <span className={styles.logoText}>Fiklin</span>
+            <span className={styles.logoText}>HabaHaba</span>
           </Menu.Item>
           <Menu.Item position="right" className={styles.menuItem}>
             <Menu.Item className={styles.menuItem} style={{ paddingRight: '0px', paddingLeft: '0px' }}>

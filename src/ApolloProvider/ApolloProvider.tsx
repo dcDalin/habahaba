@@ -12,7 +12,7 @@ import App from '../App';
 import { jwtTitle } from '../constants';
 
 const uploadLink = createUploadLink({
-  uri: `${process.env.REACT_APP_FIKLIN_URL}/graphql`,
+  uri: `${process.env.REACT_APP_HABAHABA_URL}/graphql`,
 });
 
 const wsLink = new WebSocketLink({

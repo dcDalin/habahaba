@@ -1,5 +1,5 @@
 // Token title
-export const jwtTitle = 'fiklinJWT';
+export const jwtTitle = 'habaHabaJWT';
 
 // User levels
 export const PRIVATE = 'private';

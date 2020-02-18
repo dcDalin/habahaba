@@ -15,47 +15,35 @@ const DesktopLoggedOutNavBar: React.FC<Props> = (props: Props) => {
   const { children } = props;
   const { activeItem, handleItemClick } = useContext(ActiveNavContext);
   return (
-    <Responsive getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
+    <Responsive as={Container} getWidth={getWidth} minWidth={Responsive.onlyTablet.minWidth}>
       <Menu fixed="top" secondary className={styles.menu}>
         <Menu.Item>
           <Menu.Item as={Link} to={routes.HOME} className={styles.menuItem}>
-            <span className={styles.logoText}>Fiklin</span>
+            <span className={styles.logoText}>HabaHaba</span>
           </Menu.Item>
         </Menu.Item>
 
         <Menu.Item position="right">
           <Menu.Item
             as={Link}
-            to={routes.TOURS}
-            name="tours"
+            to={routes.FAQ}
+            name="faq"
             className={
-              activeItem === 'tours'
+              activeItem === 'faq'
                 ? `${styles.menuItem} ${styles.menuItemItem} ${styles.active}`
                 : `${styles.menuItem} ${styles.menuItemItem}`
             }
             onClick={handleItemClick}
           >
-            Tours
+            FAQ
           </Menu.Item>
-          <Menu.Item
-            as={Link}
-            to={routes.TICKE_RESALE}
-            name="ticket-resale"
-            className={
-              activeItem === 'ticket-resale'
-                ? `${styles.menuItem} ${styles.menuItemItem} ${styles.active}`
-                : `${styles.menuItem} ${styles.menuItemItem}`
-            }
-            onClick={handleItemClick}
-          >
-            Ticket Resale
-          </Menu.Item>
+
           <Menu.Item className={styles.menuItem}>
             <UserAvatarDropdown />
           </Menu.Item>
         </Menu.Item>
       </Menu>
-      <div style={{ marginTop: '67px' }}>{children}</div>
+      {children}
     </Responsive>
   );
 };

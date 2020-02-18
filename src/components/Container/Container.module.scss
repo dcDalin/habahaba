@@ -1,0 +1,17 @@
+.wrapper {
+  width: 70% !important;
+  margin: auto !important;
+  display: flex;
+}
+
+@media only screen and (max-width: 1048px) {
+  .wrapper {
+    width: 80% !important;
+  }
+}
+
+@media only screen and (max-width: 942px) {
+  .wrapper {
+    width: 94% !important;
+  }
+}

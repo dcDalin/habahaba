@@ -32,23 +32,13 @@ const MobileFooterNav: React.FC = () => {
         </Menu.Item>
         <Menu.Item
           as={Link}
-          to={routes.TOURS}
-          name="tours"
-          className={activeItem === 'tours' ? `${styles.bNavActive}` : `${styles.bNav}`}
+          to={routes.FAQ}
+          name="faq"
+          className={activeItem === 'faq' ? `${styles.bNavActive}` : `${styles.bNav}`}
           onClick={handleItemClick}
         >
           <Icon name="bus" className={styles.icon} />
-          Tours
-        </Menu.Item>
-        <Menu.Item
-          as={Link}
-          to={routes.TICKE_RESALE}
-          name="ticket-resale"
-          className={activeItem === 'ticket-resale' ? `${styles.bNavActive}` : `${styles.bNav}`}
-          onClick={handleItemClick}
-        >
-          <Icon name="ticket" className={styles.icon} />
-          Ticket Resale
+          FAQ
         </Menu.Item>
       </Menu>
     </Responsive>

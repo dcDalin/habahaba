@@ -29,7 +29,7 @@ const SignupModal: React.FC = () => {
           <Button
             className={`${styles.customSuccessButton} ${styles.facebookColor}`}
             style={{ marginBottom: '10px' }}
-            onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/facebook`, '_self')}
+            onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/facebook`, '_self')}
           >
             <Icon name="facebook" />
             Sign up with Facebook
@@ -37,7 +37,7 @@ const SignupModal: React.FC = () => {
 
           <Button
             className={`${styles.customSuccessButton} ${styles.googleColor}`}
-            onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/google`, '_self')}
+            onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/google`, '_self')}
           >
             <Icon name="google" />
             Sign up with Google

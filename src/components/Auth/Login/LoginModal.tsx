@@ -97,11 +97,11 @@ const LoginModal: React.FC<Props> = (props: Props) => {
         className={styles.customCard}
       >
         <Modal.Content>
-          <h3 className={styles.customFormTitle}>Login to Fiklin</h3>
+          <h3 className={styles.customFormTitle}>Login to HabaHaba</h3>
           <Button
             className={`${styles.customSuccessButton} ${styles.facebookColor}`}
             style={{ marginBottom: '10px' }}
-            onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/facebook`, '_self')}
+            onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/facebook`, '_self')}
           >
             <Icon name="facebook" />
             Login with Facebook
@@ -109,7 +109,7 @@ const LoginModal: React.FC<Props> = (props: Props) => {
 
           <Button
             className={`${styles.customSuccessButton} ${styles.googleColor}`}
-            onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/google`, '_self')}
+            onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/google`, '_self')}
           >
             <Icon name="google" />
             Login with Google

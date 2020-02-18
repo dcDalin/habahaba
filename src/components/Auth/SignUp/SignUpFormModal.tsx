@@ -31,7 +31,7 @@ const SignUpFormModal: React.FC = () => {
         pattern: /^[\w-_.]*$/,
         maxLength: 10,
         validate: async (value: string): Promise<boolean> => {
-          const response = await axios.post(`${process.env.REACT_APP_FIKLIN_URL}/auth/username-exists`, {
+          const response = await axios.post(`${process.env.REACT_APP_HABAHABA_URL}/auth/username-exists`, {
             username: value,
           });
           if (response.data.message === 'ok') {
@@ -48,7 +48,9 @@ const SignUpFormModal: React.FC = () => {
         required: true,
         pattern: /\S+@\S+\.\S+/,
         validate: async (value: string): Promise<boolean> => {
-          const response = await axios.post(`${process.env.REACT_APP_FIKLIN_URL}/auth/email-exists`, { email: value });
+          const response = await axios.post(`${process.env.REACT_APP_HABAHABA_URL}/auth/email-exists`, {
+            email: value,
+          });
           if (response.data.message === 'ok') {
             return true;
           }
@@ -98,10 +100,10 @@ const SignUpFormModal: React.FC = () => {
         className={styles.customCard}
       >
         <Modal.Content>
-          <h3 className={styles.customFormTitle}>Create a new Fiklin account</h3>
+          <h3 className={styles.customFormTitle}>Create a new HabaHaba account</h3>
           <div style={{ width: '100%', textAlign: 'center' }}>
             <Button
-              onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/facebook`, '_self')}
+              onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/facebook`, '_self')}
               className={styles.customLinkButton}
               style={{ margin: '0.4em' }}
             >
@@ -109,7 +111,7 @@ const SignUpFormModal: React.FC = () => {
               &nbsp;Sign up with Facebook
             </Button>
             <Button
-              onClick={(): any => window.open(`${process.env.REACT_APP_FIKLIN_URL}/auth/google`, '_self')}
+              onClick={(): any => window.open(`${process.env.REACT_APP_HABAHABA_URL}/auth/google`, '_self')}
               className={styles.customLinkButton}
               style={{ margin: '0.4em' }}
             >
@@ -184,7 +186,7 @@ const SignUpFormModal: React.FC = () => {
             </Button>
           </Form>
           <Divider />
-          <p className={styles.customBottomText}>By signing up, you agree to Fiklins Terms of Service.</p>
+          <p className={styles.customBottomText}>By signing up, you agree to HabaHabas Terms of Service.</p>
           <p>
             <Button onClick={openLoginModal} className={styles.customLinkButton}>
               Login instead.
